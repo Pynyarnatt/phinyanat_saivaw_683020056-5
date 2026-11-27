@@ -3,6 +3,7 @@
 
     python scripts/query.py "SELECT * FROM warehouse.dim_product LIMIT 5"
     python scripts/query.py queries/q1_revenue_by_category_month.sql
+    python scripts/query.py queries/count_order_rows.sql
 """
 import sys
 from pathlib import Path
@@ -13,7 +14,7 @@ import duckdb
 sys.stdout.reconfigure(encoding="utf-8")
 
 ROOT = Path(__file__).resolve().parent.parent
-DB_PATH = ROOT / "northwind.duckdb"
+DB_PATH = ROOT / "northwind_dw.duckdb"
 
 
 def main() -> None:
@@ -41,3 +42,4 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
+
